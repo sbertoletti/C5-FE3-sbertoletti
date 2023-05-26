@@ -1,0 +1,55 @@
+.selector {
+    display: flex;
+    flex-direction: column;
+    top: 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem;
+}
+
+.selBtn {
+    box-sizing: border-box;
+    width: 15rem;
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.img {
+    width: 50vw;
+    height: auto;
+    margin: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+
+}
+
+.buttonery {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnAddMin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cart {
+    box-sizing: border-box;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
