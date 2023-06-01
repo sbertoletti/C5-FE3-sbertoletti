@@ -27,7 +27,6 @@ function App() {
   
   const submitHandler = (event) => {
     event.preventDefault();
-
     estandarizador();
 
     if ( data.userName.length < 3 ||  data.password.length < 6 ){
@@ -36,9 +35,7 @@ function App() {
 
       if ((data.userName === user.name) && (data.password === user.password))
       {
-        setValidador(2);
-      } else {
-        setValidador(1);
+        setValidador(true);
       }
       console.log(validador);
     }
@@ -56,13 +53,10 @@ function App() {
 
         <form onSubmit={submitHandler}>{/* aqui deberias escribir tu codigo */}
           <input type="text" placeholder="Ingrese su Nombre de Usuario" onChange={(e) => setData((prevData) => ({...prevData, userName: e.target.value}))} />
-          <button type="submit">Enviar</button>
-        </form>
-
-        <form onSubmit={submitHandler}>{/* aqui deberias escribir tu codigo */}
           <input type="password"  placeholder="Ingrese su Password" onChange={(e) => setData((prevData) => ({...prevData, password: e.target.value}))} />
           <button type="submit">Enviar</button>
         </form>
+
       </div>
       <div>
         Ingrese su nombre de usuario y password
