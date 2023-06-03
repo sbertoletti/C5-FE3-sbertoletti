@@ -13,9 +13,8 @@ function App() {
   const [ data, setData ] = useState({
     userName: '',
     password: '' 
-  })
-
-  const [ validador, setValidador ] = useState(false);
+  });
+  const [ valid, setValid ] = useState(0);
 
   const estandarizador = () => {
     const userStd = data.userName.trim();
@@ -24,7 +23,6 @@ function App() {
     setData((prevData) => ({...prevData, password: passStd}));
   };
 
-  
   const submitHandler = (event) => {
     event.preventDefault();
     estandarizador();
@@ -35,14 +33,14 @@ function App() {
 
       if ((data.userName === user.name) && (data.password === user.password))
       {
-        setValidador(true);
+        setValid(2);
+      } else {
+        setValid(1);
       }
-      console.log(validador);
+
     }
   };
 
-  const card = <Card className={styles.render}data={data}/>;
-  const error = <h1 className={styles.error}>Por favor chequea que la información sea correcta</h1>
 
   return (
     <div className="App">
@@ -51,17 +49,15 @@ function App() {
         {console.log("username a ingresar: " + user.name)}
         {console.log("password a ingresar: " + user.password)}
 
-        <form onSubmit={submitHandler}>{/* aqui deberias escribir tu codigo */}
-          <input type="text" placeholder="Ingrese su Nombre de Usuario" onChange={(e) => setData((prevData) => ({...prevData, userName: e.target.value}))} />
-          <input type="password"  placeholder="Ingrese su Password" onChange={(e) => setData((prevData) => ({...prevData, password: e.target.value}))} />
-          <button type="submit">Enviar</button>
+        <form className={styles.form} onSubmit={submitHandler}>{/* aqui deberias escribir tu codigo */}
+          <input className={styles.input} type="text" placeholder="Ingrese su Nombre de Usuario" onChange={(e) => setData((prevData) => ({...prevData, userName: e.target.value}))} />
+          <input className={styles.input}type="password"  placeholder="Ingrese su Password" onChange={(e) => setData((prevData) => ({...prevData, password: e.target.value}))} />
+          <button className={styles.button} type="submit">Enviar</button>
         </form>
 
       </div>
-      <div>
-        Ingrese su nombre de usuario y password
-        {validador ? card : error}
-      </div>
+
+      <Card data={data} setData={setData} valid={valid} setValid={setValid}/>
       
       
     </div>

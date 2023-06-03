@@ -12,12 +12,45 @@
     background-color: grey;
 }
 
-.error {
+.error-hidden {
+    visibility: hidden;
     color: red;
-
 }
 
+.error {
+    color: black;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: red;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
 .render{
     border: 2px solid black;
     border-radius: 5px;
+}
+
+.input {
+    margin: 1rem;
+}
+
+.button {
+    margin: 1rem;
+}
+
+.cartaRender {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
+    border-radius: 20px;
+    background-color: lightblue;
 }
